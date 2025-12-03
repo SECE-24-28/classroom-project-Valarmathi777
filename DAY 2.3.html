@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Navigation Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: black;
+            padding: 10px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+        section {
+            height: 80vh;
+            padding-top: 60px;
+        }
+        #hm { background-color: lightcyan; }
+        #ab { background-color: lightpink; }
+        #con { background-color: lightgreen; }
+
+        button {
+            background-color: lime;
+            color: black;
+            position: fixed;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#hm">Home</a>
+        <a href="#ab">About</a>
+        <a href="#con">Contact</a>
+    </nav>
+
+    <section id="hm">
+        <h1>Welcome to Home Section</h1>
+    </section>
+
+    <section id="ab">
+        <h1>About Us Section</h1>
+    </section>
+
+    <section id="con">
+        <h1>Contact Section</h1>
+    </section>
+
+</body>
+</html>
