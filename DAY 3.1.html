@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Based Calculator</title>
+</head>
+<body>
+
+<h2>Basic Calculator (Table Layout - No CSS)</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>First Number</th>
+        <td><input id="a" type="text" placeholder="Enter number"></td>
+    </tr>
+
+    <tr>
+        <th>Second Number</th>
+        <td><input id="b" type="text" placeholder="Enter number"></td>
+    </tr>
+
+    <tr>
+        <th>Operations</th>
+        <td>
+            <button onclick="compute('+')">Add (+)</button>
+            <button onclick="compute('-')">Sub (-)</button>
+            <button onclick="compute('*')">Mul (×)</button>
+            <button onclick="compute('/')">Div (÷)</button>
+            <button onclick="swap()">Swap</button>
+            <button onclick="clearAll()">Clear</button>
+        </td>
+    </tr>
+
+    <tr>
+        <th>Output</th>
+        <td id="result">Result will appear here</td>
+    </tr>
+</table>
+
+<br>
+<b>Note:</b> Press Enter to perform Addition.
+
+<script>
+    const aEl = document.getElementById('a');
+    const bEl = document.getElementById('b');
+    const resEl = document.getElementById('result');
+
+    function parseInput() {
+        const a = parseFloat(aEl.value.trim());
+        const b = parseFloat(bEl.value.trim());
+        return { a, b };
+    }
+
+    function show(text, isError = false) {
+        resEl.textContent = text;
+    }
+
+    function compute(op) {
+        const { a, b } = parseInput();
+
+        if (Number.isNaN(a) || Number.isNaN(b)) {
+            show("Please enter valid numbers.");
+            return;
+        }
+
+        let out;
+        switch (op) {
+            case '+': out = a + b; break;
+            case '-': out = a - b; break;
+            case '*': out = a * b; break;
+            case '/':
+                if (b === 0) {
+                    show("Error: Division by zero.");
+                    return;
+                }
+                out = a / b;
+                break;
+        }
+        show("Result: " + out);
+    }
+
+    function clearAll() {
+        aEl.value = "";
+        bEl.value = "";
+        show("Result will appear here");
+    }
+
+    function swap() {
+        let temp = aEl.value;
+        aEl.value = bEl.value;
+        bEl.value = temp;
+    }
+
+    [aEl, bEl].forEach(el => el.addEventListener('keydown', function(e){
+        if (e.key === "Enter") {
+            compute('+');
+        }
+    }));
+</script>
+
+</body>
+</html>

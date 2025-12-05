@@ -1,0 +1,138 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        function press(){
+            let body=document.getElementById("main");
+            hd.innerHTML="Peacock is the National Bird of India";
+            // let hd=document.createElement("h1");
+            // hd.innerText="This is Valarmathi R S";22
+            // hd.style.backgroundColor="Purple";
+            // hd.style.color="White";
+            // body.appendChild(hd);
+        }
+    </script>
+<body id="main">
+    <h1 id="hd">Peacock</h1>
+    <button id="btn" onclick="press()">Click Me</button>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="main">
+    <button id="btn" onclick="press()">Click Me</button>
+    <script>
+        let bt=document.getElementById("bt");
+        btn.addEventListener("click",function(){
+            alert("success....");
+        })
+
+    </script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple App</title>
+
+    <script>
+        function showText(){
+            let inputText = document.getElementById("txt").value;
+            document.getElementById("hd").innerHTML = inputText;
+        }
+
+        function press(){
+            document.getElementById("hd").innerHTML = "This is Click Me Button Output";
+        }
+    </script>
+
+</head>
+<body id="main">
+
+    <h1 id="hd"></h1>
+
+    <input type="text" id="txt" placeholder="Enter text">
+    <button onclick="showText()">Enter</button>
+
+    <br><br>
+
+    <button onclick="press()">Click Me</button>
+
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Textbox List Output</title>
+</head>
+<body>
+
+    <input type="text" id="userText" placeholder="Type something...">
+    <button onclick="press()">Enter</button>
+
+    <ul id="outputList"></ul>
+
+    <script>
+        function press() {
+            let text = document.getElementById("userText").value;
+
+            if (text.trim() === "") return;  // ignore empty input
+
+            let list = document.getElementById("outputList");
+
+            let item = document.createElement("li");
+            item.innerHTML = text;
+
+            list.appendChild(item);
+
+            document.getElementById("userText").value = ""; // clear textbox
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="Username" placeholder="Enter Username"><br><br>
+        <input type="email" id="Mail" placeholder="Enter Mail"><br><br>
+        <button type="button" id="Sub">Submit</button><br><br>
+        <span id="Error"></span>
+    </form>
+    <script>
+        let er = document.getElementById("Error");
+        let user = document.getElementById("Username");
+        let ma = document.getElementById("Mail");
+        let sub = document.getElementById("Sub");
+        sub.addEventListener("click", function(e){
+            e.preventDefault();
+            if(user.value == "" || ma.value == ""){
+                er.innerHTML = "Please fill all the details";
+                er.style.color = "red";
+            } else {
+                er.innerHTML = "Form Submitted Successfully";
+                er.style.color = "green";
+            }
+        })
+    </script>
+</body>
+</html>

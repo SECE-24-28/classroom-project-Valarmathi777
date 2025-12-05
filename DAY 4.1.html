@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="Username" placeholder="Enter Username"><br><br>
+        <input type="email" id="Mail" placeholder="Enter Mail"><br><br>
+        <button type="button" id="Sub">Submit</button><br><br>
+        <span id="Error"></span>
+    </form>
+    <script>
+        let er = document.getElementById("Error");
+        let user = document.getElementById("Username");
+        let ma = document.getElementById("Mail");
+        let sub = document.getElementById("Sub");
+        sub.addEventListener("click", function(e){
+            e.preventDefault();
+            if(user.value == "" || ma.value == ""){
+                er.innerHTML = "Please fill all the details";
+                er.style.color = "red";
+            } else {
+                er.innerHTML = "Form Submitted Successfully";
+                er.style.color = "green";
+            }
+        })
+    </script>
+</body>
+<!-- </html>  -->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Digital Clock</h1>
+<p id="clock"></p>
+
+<script>
+function updateClock(){
+  let d = new Date();
+  let h = d.getHours();
+  let m = d.getMinutes();
+  let s = d.getSeconds();
+  document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

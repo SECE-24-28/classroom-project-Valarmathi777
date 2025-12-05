@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple To-Do App</title>
+</head>
+<body>
+    <h2>Simple To-Do App</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let task = input.value.trim();
+
+            if (task !== "") {
+                let li = document.createElement("li");
+
+                // Task text
+                let span = document.createElement("span");
+                span.textContent = task;
+
+                // Delete button
+                let delBtn = document.createElement("button");
+                delBtn.textContent = "Delete";
+                delBtn.style.marginLeft = "10px";
+                delBtn.onclick = function () {
+                    li.remove();
+                };
+
+                li.appendChild(span);
+                li.appendChild(delBtn);
+
+                document.getElementById("taskList").appendChild(li);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
